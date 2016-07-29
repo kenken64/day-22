@@ -29,6 +29,15 @@ app.post("/login", passport.authenticate("local", {
     failureRedirect: "/status/403"
 }));
 
+app.get("/oauth/google", passport.authenticate("google", {
+    scope: ["email", "profile"]
+}))
+
+app.get("/oauth/google/callback", passport.authenticate("google", {
+    successRedirect: "/status/201",
+    failureRedirect: "/status/403"
+}))
+
 app.get("/status/:code", function (req, res) {
 
     console.log("Saved user------",req.user);
