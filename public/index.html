@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="FilmApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+
+<body>
+  <a href="/logout" role="button" name="name" class="btn btn-primary">
+    logout
+  </a>
+<div ng-controller="FirstController"></div>
+<div ng-controller="SecondController"></div>
+<div class="container" ui-view></div>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--Angular UI ROUTER Library-->
+<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/bower_components/angular-http-auth/src/http-auth-interceptor.js"></script>
+
+<!--Source Files-->
+<script src="index.js"></script>
+<script src="route.js"></script>
+<script src="controller.js"></script>
+<script src="service.js"></script>
+<script src="scope.controller.js"></script>
+
+</body>
+</html>

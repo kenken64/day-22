@@ -1,0 +1,8 @@
+<ul>
+    <li ng-repeat="film in ctrl.films">
+        <a ui-sref="detail({filmId: film.film_id})">
+            {{film.film_id}} {{film.title}}
+        </a>
+
+    </li>
+</ul>
