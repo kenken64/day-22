@@ -30,6 +30,10 @@ module.exports = function (app) {
             })
     });
 
+    app.get("/api/userimage", function(req, res) {
+        res.redirect(req.user.photos[0].value)
+    })
+
     app.use(express.static(__dirname + "/public"));
     app.use("/bower_components", express.static(__dirname + "/bower_components"));
 };

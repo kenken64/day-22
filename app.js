@@ -33,14 +33,26 @@ app.get("/oauth/google", passport.authenticate("google", {
     scope: ["email", "profile"]
 }))
 
+app.get("/oauth/facebook", passport.authenticate("facebook", {
+    scope: ["email", "public_profile"]
+}))
+
 app.get("/oauth/google/callback", passport.authenticate("google", {
-    successRedirect: "/status/201",
-    failureRedirect: "/status/403"
+    successRedirect: "/",
+    failureRedirect: "/"
+}))
+
+app.get("/oauth/facebook/callback", passport.authenticate("facebook", {
+    successRedirect: "/",
+    failureRedirect: "/"
 }))
 
 app.get("/status/:code", function (req, res) {
 
-    console.log("Saved user------",req.user);
+    if(req.user) {
+      console.log("Saved user------", req.user.email);
+    }
+
 
     var code = parseInt(req.params.code);
 
